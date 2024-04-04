@@ -1,112 +1,58 @@
-# Try Out Development Containers: Python
-
-[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode-remote-try-python)
-
-A **development container** is a running container with a well-defined tool/runtime stack and its prerequisites. You can try out development containers with **[GitHub Codespaces](https://github.com/features/codespaces)** or **[Visual Studio Code Dev Containers](https://aka.ms/vscode-remote/containers)**.
-
-This is a sample project that lets you try out either option in a few easy steps. We have a variety of other [vscode-remote-try-*](https://github.com/search?q=org%3Amicrosoft+vscode-remote-try-&type=Repositories) sample projects, too.
-
-> **Note:** If you already have a codespace or dev container, you can jump to the [Things to try](#things-to-try) section. 
-
-## Setting up the development container
-
-### GitHub Codespaces
-Follow these steps to open this sample in a Codespace:
-1. Click the **Code** drop-down menu.
-2. Click on the **Codespaces** tab.
-3. Click **Create codespace on main** .
-
-For more information on creating your codespace, visit the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace#creating-a-codespace).
-
-### VS Code Dev Containers
-
-If you already have VS Code and Docker installed, you can click the badge above or [here](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode-remote-try-python) to get started. Clicking these links will cause VS Code to automatically install the Dev Containers extension if needed, clone the source code into a container volume, and spin up a dev container for use.
-
-Follow these steps to open this sample in a container using the VS Code Dev Containers extension:
-
-1. If this is your first time using a development container, please ensure your system meets the prerequisites (i.e. have Docker installed) in the [getting started steps](https://aka.ms/vscode-remote/containers/getting-started).
-
-2. To use this repository, you can either open the repository in an isolated Docker volume:
-
-    - Press <kbd>F1</kbd> and select the **Dev Containers: Try a Sample...** command.
-    - Choose the "Python" sample, wait for the container to start, and try things out!
-        > **Note:** Under the hood, this will use the **Dev Containers: Clone Repository in Container Volume...** command to clone the source code in a Docker volume instead of the local filesystem. [Volumes](https://docs.docker.com/storage/volumes/) are the preferred mechanism for persisting container data.   
-
-   Or open a locally cloned copy of the code:
-
-   - Clone this repository to your local filesystem.
-   - Press <kbd>F1</kbd> and select the **Dev Containers: Open Folder in Container...** command.
-   - Select the cloned copy of this folder, wait for the container to start, and try things out!
-
-## Things to try
-
-Once you have this sample opened, you'll be able to work with it like you would locally.
-
-Some things to try:
-
-1. **Edit:**
-   - Open `app.py`
-   - Try adding some code and check out the language features.
-   - Make a spelling mistake and notice it is detected. The [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) extension was automatically installed because it is referenced in `.devcontainer/devcontainer.json`.
-   - Also notice that utilities like `pylint` and the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension are installed. Tools are installed in the `mcr.microsoft.com/devcontainers/python` image and Dev Container settings and metadata are automatically picked up from [image labels](https://containers.dev/implementors/reference/#labels).
+# Career Connections 5.6: Getting What you want
 
 
-2. **Terminal:** 
-    - Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> to open a terminal window.
-    - Type `python -m flask run --port 9000 --no-debugger --no-reload` to run the app.
-         - The terminal will say your app is `Running on http://127.0.0.1:9000/`. Click on the link in the terminal to view your app running in the browser.
-    - Notice that the Python extension is already installed in the container since the `.devcontainer/devcontainer.json` lists `"ms-python.python"` as an extension to install automatically when the container is created.
-    
-      > **Tip:** If you use this container outside of VS Code via `docker run` with `-p 9000`, you may need to append `--host 0.0.0.0` to the command above. The `-p` option "publishes" the port rather than forwarding it. It therefore will not work if the application only listens to localhost. The `forwardPorts` property in `devcontainer.json` does not have this limitation, but you can use `appPort` property instead if you want to mirror the `docker run` behavior.
 
-3. **Build, Run, and Debug:**
-   - Open `app.py`
-   - Add a breakpoint (e.g. on line 9).
-   - Press <kbd>F5</kbd> to launch the app in the container.
-   - Once the breakpoint is hit, try hovering over variables (e.g. the app variable on line 7), examining locals, and more.
-   - Continue (<kbd>F5</kbd>). You can connect to the server in the container by either: 
-      - Clicking on `Open in Browser` in the notification telling you: `Your service running on port 9000 is available`.
-      - Clicking the globe icon in the 'Ports' view. The 'Ports' view gives you an organized table of your forwarded ports, and you can access it with the command **Ports: Focus on Ports View**.
-   - Notice port 9000 in the 'Ports' view is labeled "Hello Remote World." In `devcontainer.json`, you can set `"portsAttributes"`, such as a label for your forwarded ports and the action to be taken when the port is autoforwarded.
-   
-   > **Note:** In Dev Containers, you can access your app at `http://localhost:9000` in a local browser. But in a browser-based Codespace, you must click the link from the notification or the `Ports` view so that the service handles port forwarding in the browser and generates the correct URL.
+**APIs exist to give you want you need.** Your job is to understand 1) How to ask and 2) Utilize the data that is returned. The purpose of this lab is to give you instruction and practice in doing both.
+ 
 
-4. **Rebuild or update your container**
+## Background Knowledge 
 
-   You may want to make changes to your container, such as installing a different version of a software or forwarding a new port. You'll rebuild your container for your changes to take effect. 
+### The Structure of JSON Objects
+The best place to start when learning about JavaScript Object Notation (JSON) is with the structure of the object.
 
-   **Open browser automatically:** As an example change, let's update the `portsAttributes` in the `.devcontainer/devcontainer.json` file to open a browser when our port is automatically forwarded.
-   
-   - Open the `.devcontainer/devcontainer.json` file.
-   - Modify the `"onAutoForward"` attribute in your `portsAttributes` from `"notify"` to `"openBrowser"`.
-   - Press <kbd>F1</kbd> and select the **Dev Containers: Rebuild Container** or **Codespaces: Rebuild Container** command so the modifications are picked up.  
+Recall that Python Dictionaries are nearly identical to JSON Objects. Where we use the term JSON Object we could have used the term Python Dictionary. That will be important later.
+JSON is an acronymn that stands for JavaScript Object Notation. Like Python Dictionaries, a JSON Object starts with a left-facing curly brace ( { ) and ends with a right-facing curly brace ( } ). Inside of those border characters are found zero or more key:value pairs. Multiple key:value pairs are separated with commas. 
 
-5. **Install Node.js using a Dev Container Feature:**
-   - Press <kbd>F1</kbd> and select the **Dev Containers: Configure Container Features...** or **Codespaces: Configure Container Features...** command.
-   - Type "node" in the text box at the top.
-   - Check the check box next to "Node.js (via nvm) and yarn" (published by devcontainers) 
-   - Click OK
-   - Press <kbd>F1</kbd> and select the **Dev Containers: Rebuild Container** or **Codespaces: Rebuild Container** command so the modifications are picked up.
+The key is the name of the data held in the object. 
 
-### More samples
+For instance, {'eyes' : 'blue'} is JSON object holding a key:value pair representing a person's eye color. In this case, the eyes are blue. 
 
-- [Tweeter App - Python and Django](https://github.com/Microsoft/python-sample-tweeterapp)
+This is a very simple JSON object. A more complex JSON object could have lists or dictionaries as values. Some  JSON objects even have lists of JSON objects as their vaues. Crazy!
 
-## Contributing
+For instance, the JSON object class = { students:["Jim","Jane","Pat","Kim"] } is a JSON object whose 'students' key has a value that is a list.
+To access the student named Pat, one would have to use the reference class['students'][2]. Do you see why? 
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+'class' is the name of the JSON object and 'students' is the key that references the list of students. 'Pat' is the third student in the list. It has an index of 2 because the count starts with zero.
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+The JSON object city = { 'location': { longitude: 39.4521, latitude: -104.9331 } } is a JSON object whose 'location' key has a value that is a JSON object! To access the longitude, one would have to use the reference city['location']['longitude']. Do you see why?
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+### Retrieving Data From an API
 
-## License
+You have seen import statements like import math or import random. You also understand that these instructions bring in code that others have written to make your life easier. In this lab we use a module called requests to help us retrieve data from the internet. 
 
-Copyright © Microsoft Corporation All rights reserved.<br />
-Licensed under the MIT License. See LICENSE in the project root for license information.
+The code response = requests.get(url) is used to retrieve data from an Application Programming Interface (API) being served from the URL pointed to by the variable url. The returned data, in JSON format, will be stored in the variable response. This activity will provide you with a URL that will access an API and return the 39th chapter from the book of Alma. 
+
+You will have to understand how the URL will have to be modified in order to build a URL that will retrieve any chapter of The Book of Mormon a user of the program wants.  
+
+Because the retrieved data is a raw JSON format, and includes information you do not need, you will have to use your Python skills to extract and present only the information your user wants, in this case a summary. 
+
+## Look at the Sample Code demo.py
+
+The file demo.py in CodeSPaces contains code that access the Book of Mormon API and retrieves the 39th chapter of Alma. It then reveals the structure of the returned JSON Object in eight small sections of code. These sections are designed to illustrate how the data is structured and, consequently, accessed through code.
+
+It is important that you understand how each section of code works so that you will be able to write code that prints the summary of any chapter from the Book of Mormon. 
+You will also have to examine the API's URL and understand how it instructs the API to return a particular book and chapter. 
+
+After you understand how these things are done, you will be able to customize the given URL to retrieve and print out a summary for any chapter of the Book of Mormon. That is the goal of this activity: To allow the user to enter the name of any book and chapter found in the Book of Mormon and print out its summary.
+
+## Submission
+
+After completing the task, which includes running it and checking for errors, download the finished .py file and include it in your submission. It is easy to download files in CodeSpaces by simply right-clicking on the name of the file in the explorer pane (left side of the main window) and selecting download.
+
+
+
+
+
+
+
+
