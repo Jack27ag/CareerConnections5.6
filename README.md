@@ -11,34 +11,34 @@
 The best place to start when learning about JavaScript Object Notation (JSON) is with the structure of the object.
 
 Recall that Python Dictionaries are nearly identical to JSON Objects. Where we use the term JSON Object we could have used the term Python Dictionary. That will be important later.
-JSON is an acronymn that stands for JavaScript Object Notation. Like Python Dictionaries, a JSON Object starts with a left-facing curly brace ( { ) and ends with a right-facing curly brace ( } ). Inside of those border characters are found zero or more key:value pairs. Multiple key:value pairs are separated with commas. 
+JSON is an acronym that stands for JavaScript Object Notation. Like Python Dictionaries, a JSON Object starts with a left-facing curly brace ( { ) and ends with a right-facing curly brace ( } ). Inside of those border characters are found zero or more key:value pairs. Multiple key:value pairs are separated with commas. 
 
 The key is the name of the data held in the object. 
 
-For instance, {'eyes' : 'blue'} is JSON object holding a key:value pair representing a person's eye color. In this case, the eyes are blue. 
+For instance, _{'eyes' : 'blue'}_ is JSON object holding a key:value pair representing a person's eye color. In this case, the eyes are blue. 
 
 This is a very simple JSON object. A more complex JSON object could have lists or dictionaries as values. Some  JSON objects even have lists of JSON objects as their vaues. Crazy!
 
-For instance, the JSON object class = { students:["Jim","Jane","Pat","Kim"] } is a JSON object whose 'students' key has a value that is a list.
-To access the student named Pat, one would have to use the reference class['students'][2]. Do you see why? 
+For instance, the JSON object _class = { students:["Jim","Jane","Pat","Kim"] }_ is a JSON object whose 'students' key has a value that is a list.
+To access the student named Pat, one would have to use the reference _class['students'][2]_. Do you see why? 
 
 'class' is the name of the JSON object and 'students' is the key that references the list of students. 'Pat' is the third student in the list. It has an index of 2 because the count starts with zero.
 
-The JSON object city = { 'location': { longitude: 39.4521, latitude: -104.9331 } } is a JSON object whose 'location' key has a value that is a JSON object! To access the longitude, one would have to use the reference city['location']['longitude']. Do you see why?
+The JSON object _city = { 'location': { longitude: 39.4521, latitude: -104.9331 } }_ is a JSON object whose 'location' key has a value that is a JSON object! To access the longitude, one would have to use the reference _city['location']['longitude']_. Do you see why?
 
 ### Retrieving Data From an API
 
 You have seen import statements like import math or import random. You also understand that these instructions bring in code that others have written to make your life easier. In this lab we use a module called requests to help us retrieve data from the internet. 
 
-The code response = requests.get(url) is used to retrieve data from an Application Programming Interface (API) being served from the URL pointed to by the variable url. The returned data, in JSON format, will be stored in the variable response. This activity will provide you with a URL that will access an API and return the 39th chapter from the book of Alma. 
+The code _response = requests.get(url)_ is used to retrieve data from an **Application Programming Interface (API)** being served from the URL pointed to by the variable _url_. The returned data, in JSON format, will be stored in the variable response. This activity will provide you with a URL that will access an API and return the 39th chapter from the book of Alma. 
 
 You will have to understand how the URL will have to be modified in order to build a URL that will retrieve any chapter of The Book of Mormon a user of the program wants.  
 
 Because the retrieved data is a raw JSON format, and includes information you do not need, you will have to use your Python skills to extract and present only the information your user wants, in this case a summary. 
 
-## Look at the Sample Code demo.py
+## Look at the Sample Code _demo.py_
 
-The file demo.py in CodeSPaces contains code that access the Book of Mormon API and retrieves the 39th chapter of Alma. It then reveals the structure of the returned JSON Object in eight small sections of code. These sections are designed to illustrate how the data is structured and, consequently, accessed through code.
+The file _demo.py_ in CodeSPaces contains code that access the Book of Mormon API and retrieves the 39th chapter of Alma. It then reveals the structure of the returned JSON Object in eight small sections of code. These sections are designed to illustrate how the data is structured and, consequently, accessed through code.
 
 It is important that you understand how each section of code works so that you will be able to write code that prints the summary of any chapter from the Book of Mormon. 
 You will also have to examine the API's URL and understand how it instructs the API to return a particular book and chapter. 
