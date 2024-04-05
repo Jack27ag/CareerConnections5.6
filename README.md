@@ -45,9 +45,9 @@ You will also have to examine the API's URL and understand how it instructs the 
 
 After you understand how these things are done, you will be able to customize the given URL to retrieve and print out a summary for any chapter of the Book of Mormon. That is the goal of this activity: To allow the user to enter the name of any book and chapter found in the Book of Mormon and print out its summary.
 
-## Submission
+## Task and Submission
 
-After completing the task, which includes running it and checking for errors, download the finished .py file and include it in your submission. It is easy to download files in CodeSpaces by simply right-clicking on the name of the file in the explorer pane (left side of the main window) and selecting download.
+Using the code stub _accessAPI.py_ and, using _demo.py_ as your guide, write Python code that asks the user what book and chapter they are interested in. Your code will then retrieve a summary of that book and chapter. reading the summary of. To do this, your code will have to create the proper URL for the API call using the base URL _https://openscriptureapi.org/api/scriptures/v1/lds/en/volume/bookofmormon/._   Refer to _demo.py_ for the mechanics. After completing the task, which includes running it and checking for errors, download the finished .py file and include it in your submission. It is easy to download files in CodeSpaces: simply right-click on the name of the file in the explorer pane (left side of the main window) and select download. This is the file you will upload to the assignment.
 
 
 
